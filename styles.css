@@ -1,0 +1,213 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #414141;
+    color: #333;
+}
+
+/* Header Styling */
+#header {
+    position: fixed; /* Fixed position to keep header visible at all times */
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    z-index: 1000; /* Ensure header is on top */
+    transition: transform 0.3s ease; /* Smooth scroll effect */
+    will-change: transform; /* Hint to browser for optimizations */
+}
+
+/* Header Logo */
+header .logo h1 {
+    font-size: 4em; /* Increased font size */
+    margin: 0;
+}
+
+/* Landing Page Styling */
+.landing_page {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    min-height: 500px; /* Adjust as needed */
+    overflow: hidden; /* Hide any overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px; /* Add margin to account for fixed header */
+}
+
+/* Background Image */
+.landing_page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('pixelcut-export.png') center/cover no-repeat;
+    filter: blur(3px); /* Adjust the blur level as needed */
+    z-index: -1; /* Ensure it is behind the main content */
+}
+
+/* Main Image */
+.landing_page img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100vh; /* Ensure the image covers the viewport height */
+    max-width: 100vw; /* Ensure the image does not exceed viewport width */
+    transform: translate(-50%, -50%); /* Center the image */
+    object-fit: cover; /* Cover the container while preserving aspect ratio */
+    z-index: 0; /* Ensure it is above the blurred background */
+}
+
+/* Main Content */
+main {
+    margin-top: 60px; /* Adjust based on header height */
+}
+
+/* Button and List Styling */
+#searchButton {
+    position: relative;
+    z-index: 1; /* Ensure button is above other content */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #0056b3;
+}
+
+#museum-list {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    padding: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    max-height: 300px; /* Limit the height */
+    overflow-y: auto; /* Add scroll if needed */
+    z-index: 1; /* Ensure list is above other content */
+}
+
+#museum-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#museum-list li:last-child {
+    border-bottom: none;
+}
+
+/* Museum Slider */
+.museum-slider {
+    display:flex;
+    overflow-x: auto;
+    scroll-snap-type:mandatory;
+    gap: 20px;
+    padding: 10px;
+    white-space: nowrap;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    height: 500px; /* Set fixed height for the slider */
+}
+
+.slider {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image covers the entire area */
+    border-radius: 8px;
+}
+
+.explore{
+    top: 200;
+    text-align: center;
+    font-size: 60px;
+    color: rgb(233, 130, 4);
+    background-color: white;
+}
+.museum {
+    flex: 0 0 300px;
+    background: #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.museum:hover {
+    background: #999;
+}
+
+/* Reviews */
+.reviews {
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.review {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    z-index: 10; /* Ensure footer is on top */
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
